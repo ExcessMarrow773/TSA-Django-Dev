@@ -1,0 +1,27 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My Personal Blog</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/9cbbd8e6-8714-4754-824f-0a79000aa06a/favicon.ico?v=1733976526774">
+</head>
+<body>
+
+<h1>My Personal Blog</h1>
+  {% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}! <a href="{% url 'logout' %}">Logout</a>    <a href="/admin" >Admin Site</a></p>
+
+{% else %}
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'register' %}">Register</a>
+{% endif %}
+<a href="{% url 'blog_index' %}">home</a>
+<hr>
+{% block page_title %}{% endblock page_title %}  
+{% block page_content %}{% endblock page_content %}
+</body>
+</html>}
