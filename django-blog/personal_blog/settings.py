@@ -25,7 +25,7 @@ SECRET_KEY = '4^C@6xd!&Pb%#x#&hEcQ6rf3CHO^a$*NExVlJRlQ*Ex3z!#ucE'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mssa-tsa-web-dev.glitch.me', 'api.glitch.com']
+ALLOWED_HOSTS = ['mssa-tsa-web-dev.glitch.me', 'preview.glitch.com']
 
 
 # Application definition
@@ -125,5 +125,5 @@ LOGOUT_REDIRECT_URL = '/'
 STATIC_URL = "static/"
 STATIC_ROOT = "app/django-blog/static/"
 STATICFILES_DIRS = [
-    "static/",
+    f'{BASE_DIR}/static',
 ]
