@@ -1,8 +1,7 @@
-<!--{% extends "base.html" %}-->
-<!--{% load static %}-->
 <h2>Login</h2>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Login</button>
 </form>
+<p>Don't have an account? <a href="{% url 'register' %}">Register here</a>.</p>
