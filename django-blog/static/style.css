@@ -4,7 +4,7 @@
     "Helvetica Neue", sans-serif;
   --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   --standard-border-radius: 5px;
-  --bg: #000000;
+  --bg: #ffffff;
   --accent-bg: #f5f7ff;
   --text: #212121;
   --text-light: #585858;
@@ -20,7 +20,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --bg: #000000;
+    --bg: #ffffff;
     --accent-bg: #2b2b2b;
     --text: #dcdcdc;
     --text-light: #ababab;
@@ -85,6 +85,7 @@ body > header p {
 }
 main {
   padding-top: 1.5rem;
+  background-color: white;
 }
 body > footer {
   color: var(--text-light);
