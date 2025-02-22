@@ -1,6 +1,7 @@
 # blog/forms.py
 
 from django import forms
+from .models import Category  # Import the Category model
 
 class CommentForm(forms.Form):
     author = forms.CharField(
@@ -26,8 +27,9 @@ class CreatePost(forms.Form):
             attrs={"class": "form-control", "placeholder": "Body"}
         )
     )
-    categories = forms.ChoiceField(
-        widget=forms.Select(
+    categories = forms.ModelMultipleChoiceField(
+        queryset=Category.objects.all(),
+        widget=forms.CheckboxSelectMultiple(
             attrs={"class": "form-control"}
         )
     )
