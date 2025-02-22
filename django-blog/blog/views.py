@@ -79,6 +79,13 @@ def makepost(request):
     
     return render(request, 'blog/makepost.html', {'form': form})
 
+def viewCategory(request):
+    categories = Category.objects.all()
+    context = {
+        'categories': categories,
+    }
+    return render(request, "blog/category_view.html", context)
+
 class CustomLoginView(LoginView):
     template_name = 'login.html'
 
