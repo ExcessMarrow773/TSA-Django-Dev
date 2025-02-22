@@ -1,0 +1,26 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+{% block page_title %}
+    <title>Create Post</title>
+{% endblock page_title %}
+
+{% block page_content %}
+<body>
+    <h1>Create Post</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            {{ form.title }}
+        </div>
+        <div>
+            {{ form.body }}
+        </div>
+        <div>
+            {{ form.categories }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="{% url 'blog_index' %}">Cancel</a>
+    </form>
+</body>
+{% endblock page_content %}
