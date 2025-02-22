@@ -1,8 +1,7 @@
-# blog/views.py
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from blog.models import Post, Comment
-from blog.forms import CommentForm
+from blog.models import Post, Comment, Category
+from blog.forms import CommentForm, CreatePost
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView, LogoutView
 
@@ -62,7 +61,30 @@ def test(request):
     context = {
     }
     return render(request, "blog/index.html", context)
-  
+
+def makepost(request):
+    if request.method == "POST":
+        form = CreatePost(request.POST)
+        if form.is_valid():
+            post = Post(
+                title=form.cleaned_data["title"],
+                body=form.cleaned_data["body"],
+            )
+            post.save()
+            post.categories.set(form.cleaned_data["categories"])
+            post.save()
+            return redirect('blog_index')
+    else:
+        form = CreatePost()
+    
+    return render(request, 'blog/makepost.html', {'form': form})
+
+def viewCategory(request):
+    categories = Category.objects.all()
+    context = {
+        'categories': categories,
+    }
+    return render(request, "blog\catergory_view.html", context)
 
 class CustomLoginView(LoginView):
     template_name = 'login.html'

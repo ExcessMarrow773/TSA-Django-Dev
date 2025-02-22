@@ -1,0 +1,15 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<title>Categories</title>
+<body>
+    <h1>Categories</h1>
+
+    <h2>Existing Categories</h2>
+    <ul>
+        {% for category in categories %}
+            <li><a href="{% url 'blog_category' category.name %}">{{ category.name }}</a></li>
+        {% empty %}
+            <li>No categories available.</li>
+        {% endfor %}
+    </ul>
+</body>

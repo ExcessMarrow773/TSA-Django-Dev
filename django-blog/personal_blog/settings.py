@@ -25,7 +25,7 @@ SECRET_KEY = '4^C@6xd!&Pb%#x#&hEcQ6rf3CHO^a$*NExVlJRlQ*Ex3z!#ucE'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mssa-tsa-web-dev.glitch.me', 'preview.glitch.com']
+ALLOWED_HOSTS = ['bald-plucky-bucket.glitch.me', 'preview.glitch.com', '127.0.0.1', 'localhost', '192.168.68.131']
 
 
 # Application definition
@@ -123,7 +123,17 @@ LOGOUT_REDIRECT_URL = '/'
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT = "app/django-blog/static/"
+STATIC_ROOT = "app/django-blog/static"
 STATICFILES_DIRS = [
+    f'{BASE_DIR}/static',
+]
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(
+       f'{BASE_DIR}/static',
+)
+MEDIAFILES_DIRS = [
+    'media/',
     f'{BASE_DIR}/static',
 ]
