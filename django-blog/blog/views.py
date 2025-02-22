@@ -64,7 +64,7 @@ def test(request):
 
 def makepost(request):
     if request.method == "POST":
-        form = CreatePost(request.POST, categories=Category.objects.all())
+        form = CreatePost(request.POST)
         if form.is_valid():
             post = Post(
                 title=form.cleaned_data["title"],
@@ -75,7 +75,7 @@ def makepost(request):
             post.save()
             return redirect('blog_index')
     else:
-        form = CreatePost(categories=Category.objects.all())
+        form = CreatePost()
     
     return render(request, 'blog/makepost.html', {'form': form})
 

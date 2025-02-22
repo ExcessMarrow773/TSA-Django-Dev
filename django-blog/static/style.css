@@ -405,7 +405,7 @@ input[type="checkbox"]:checked:after {
   content: " ";
   border-right: solid var(--bg) 0.08em;
   border-bottom: solid var(--bg) 0.08em;
-  background-color: #var(--accent);
+  background-color: var(--accent); /* Corrected this line */
   border-radius: 0;
   width: 0.18em;
   height: 0.32em;
@@ -449,7 +449,7 @@ hr {
 mark {
   border-radius: var(--standard-border-radius);
   background-color: var(--marked);
-  color: #var(--accent);
+  color: var(--accent); /* Corrected this line */
   padding: 2px 5px;
 }
 mark a {
