@@ -4,12 +4,12 @@
     "Helvetica Neue", sans-serif;
   --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   --standard-border-radius: 5px;
-  --bg: #000000;
+  --bg: #ffffff;
   --accent-bg: #f5f7ff;
   --text: #212121;
   --text-light: #585858;
-  --border: #898ea4;
-  --accent: #0d47a1;
+  --border: #0B5B53;
+  --accent:#002559;
   --accent-hover: #1266e2;
   --accent-text: var(--bg);
   --code: #d81b60;
@@ -17,24 +17,10 @@
   --marked: #ffdd33;
   --disabled: #efefef;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --bg: #000000;
-    --accent-bg: #2b2b2b;
-    --text: #dcdcdc;
-    --text-light: #ababab;
-    --accent: #ffb300;
-    --accent-hover: #ffe099;
-    --accent-text: var(--bg);
-    --code: #f06292;
-    --preformatted: #cccccc;
-    --disabled: #111111;
-  }
-  img,
-  video {
-    opacity: 0.8;
-  }
+
+img,
+video {
+  opacity: 0.8;
 }
 *,
 :before,
@@ -405,7 +391,7 @@ input[type="checkbox"]:checked:after {
   content: " ";
   border-right: solid var(--bg) 0.08em;
   border-bottom: solid var(--bg) 0.08em;
-  background-color: #var(--accent);
+  background-color: var(--accent); /* Corrected this line */
   border-radius: 0;
   width: 0.18em;
   height: 0.32em;
@@ -449,7 +435,7 @@ hr {
 mark {
   border-radius: var(--standard-border-radius);
   background-color: var(--marked);
-  color: #var(--accent);
+  color: var(--accent); /* Corrected this line */
   padding: 2px 5px;
 }
 mark a {
