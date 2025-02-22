@@ -64,11 +64,12 @@ def test(request):
 
 def makepost(request):
     if request.method == "POST":
-        form = CreatePost(request.POST)
+        form = CreatePost(request.POST, request.FILES)
         if form.is_valid():
             post = Post(
                 title=form.cleaned_data["title"],
                 body=form.cleaned_data["body"],
+                image=form.cleaned_data["image"]
             )
             post.save()
             post.categories.set(form.cleaned_data["categories"])

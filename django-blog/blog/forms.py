@@ -33,3 +33,8 @@ class CreatePost(forms.Form):
             attrs={"class": "form-control"}
         )
     )
+    image = forms.ImageField(
+        widget=forms.FileInput(
+            attrs={"class": "form-control"}
+        )
+    )

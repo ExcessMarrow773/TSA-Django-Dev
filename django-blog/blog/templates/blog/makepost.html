@@ -8,7 +8,7 @@
 {% block page_content %}
 <body>
     <h1>Create Post</h1>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div>
             {{ form.title }}
@@ -18,6 +18,9 @@
         </div>
         <div>
             {{ form.categories }}
+        </div>
+        <div>
+            {{ form.image }}
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         <a href="{% url 'blog_index' %}">Cancel</a>
