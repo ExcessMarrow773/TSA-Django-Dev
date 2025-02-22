@@ -84,7 +84,7 @@ def viewCategory(request):
     context = {
         'categories': categories,
     }
-    return render(request, "blog/category_view.html", context)
+    return render(request, "blog\catergory_view.html", context)
 
 class CustomLoginView(LoginView):
     template_name = 'login.html'

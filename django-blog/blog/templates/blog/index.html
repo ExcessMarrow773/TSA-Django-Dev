@@ -15,7 +15,7 @@
                 {{ post.created_on.date }} | Categories:
                 {% for category in post.categories.all %}
                     <a href="{% url 'blog_category' category.name %}">
-                        {{ category.name }}
+                        {{ category.name }}{% if not forloop.last %}, {% endif %}
                     </a>
                 {% endfor %}
             </small>
