@@ -4,18 +4,20 @@
     "Helvetica Neue", sans-serif;
   --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   --standard-border-radius: 5px;
-  --bg: #ffffff;
-  --accent-bg: #f5f7ff;
-  --text: #212121;
-  --text-light: #585858;
-  --border: #0B5B53;
-  --accent:#002559;
-  --accent-hover: #1266e2;
-  --accent-text: var(--bg);
-  --code: #d81b60;
-  --preformatted: #444444;
-  --marked: #ffdd33;
-  --disabled: #efefef;
+
+  /* Updated Color Palette */
+  --bg: #000000; /* Pure Black */
+  --accent-bg: #4A0E05; /* Dark Reddish Brown */
+  --text: #D9C5C5; /* Soft Muted Pink */
+  --text-light: #A08A8A; /* Light Desaturated Pink */
+  --border: #8B0000; /* Dark Red (Blood Red) */
+  --accent: #D30000; /* Bright Red */
+  --accent-hover: #FF5C5C; /* Lighter Reddish-Pink */
+  --accent-text: var(--bg); /* Black for contrast */
+  --code: #FF7878; /* Soft Neon Pink */
+  --preformatted: #282828; /* Dark Gray */
+  --marked: #FF4444; /* Bright Red */
+  --disabled: #444444; /* Dark Gray */
 }
 
 img,
@@ -56,17 +58,14 @@ body > header {
   border-bottom: 1px solid var(--border);
   text-align: center;
   grid-column: 1/-1;
-  padding: 0 0.5rem 2rem;
 }
 body > header > :only-child {
   margin-block-start: 2rem;
 }
 body > header h1 {
-  max-width: 1200px;
   margin: 1rem auto;
 }
 body > header p {
-  max-width: 40rem;
   margin: 1rem auto;
 }
 main {

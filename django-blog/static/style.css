@@ -58,17 +58,14 @@ body > header {
   border-bottom: 1px solid var(--border);
   text-align: center;
   grid-column: 1/-1;
-  padding: 0 0.5rem 2rem;
 }
 body > header > :only-child {
   margin-block-start: 2rem;
 }
 body > header h1 {
-  max-width: 1200px;
   margin: 1rem auto;
 }
 body > header p {
-  max-width: 40rem;
   margin: 1rem auto;
 }
 main {
