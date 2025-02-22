@@ -69,6 +69,7 @@ def makepost(request):
             post = Post(
                 title=form.cleaned_data["title"],
                 body=form.cleaned_data["body"],
+                image=form.cleaned_data["image"]
             )
             post.save()
             post.categories.set(form.cleaned_data["categories"])
