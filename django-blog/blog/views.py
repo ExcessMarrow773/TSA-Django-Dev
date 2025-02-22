@@ -4,8 +4,6 @@ from blog.models import Post, Comment, Category
 from blog.forms import CommentForm, CreatePost
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView, LogoutView
-from django.shortcuts import render, redirect
-from .forms import PostForm
 
 def blog_index(request):
     posts = Post.objects.all().order_by("-created_on")

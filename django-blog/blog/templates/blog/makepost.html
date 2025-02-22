@@ -15,12 +15,13 @@
         </div>
         <div>
             {{ form.body }}
-        </div>
-        <div>
             {{ form.categories }}
+            {{ form.image }}
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         <a href="{% url 'blog_index' %}">Cancel</a>
+    </div>
+
     </form>
 </body>
 {% endblock page_content %}
