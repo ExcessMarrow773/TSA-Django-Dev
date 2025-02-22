@@ -7,7 +7,7 @@
     <h2>Existing Categories</h2>
     <ul>
         {% for category in categories %}
-            <li><a href="{% url 'blog_category' category.pk %}">{{ category.name }}</a></li>
+            <li><a href="{% url 'blog_category' category.name %}">{{ category.name }}</a></li>
         {% empty %}
             <li>No categories available.</li>
         {% endfor %}
