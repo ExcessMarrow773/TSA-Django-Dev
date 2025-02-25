@@ -62,12 +62,7 @@ body > header {
 body > header > :only-child {
   margin-block-start: 2rem;
 }
-body > header h1 {
-  margin: 1rem auto;
-}
-body > header p {
-  margin: 1rem auto;
-}
+
 main {
   padding-top: 1.5rem;
   background-color: white;
@@ -84,11 +79,9 @@ h1 {
   font-size: 3rem;
 }
 h2 {
-  margin-top: 3rem;
   font-size: 2.6rem;
 }
 h3 {
-  margin-top: 3rem;
   font-size: 2rem;
 }
 h4 {
