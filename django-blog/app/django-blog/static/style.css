@@ -78,15 +78,6 @@ body {
 body > * {
   grid-column: 2;
 }
-body > header {
-  background-color: var(--accent-bg);
-  border-bottom: 1px solid var(--border);
-  text-align: center;
-  grid-column: 1/-1;
-}
-body > header > :only-child {
-  margin-block-start: 2rem;
-}
 
 main {
   padding-top: 1.5rem;
