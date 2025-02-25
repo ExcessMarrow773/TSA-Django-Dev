@@ -1,9 +1,9 @@
+{% extends "base.html" %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'style.css' %}">
 <title>Categories</title>
 <body>
     <h1>Categories</h1>
-
     <h2>Existing Categories</h2>
     <ul>
         {% for category in categories %}
