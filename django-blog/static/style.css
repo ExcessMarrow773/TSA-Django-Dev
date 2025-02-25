@@ -8,8 +8,8 @@
   /* Updated Color Palette */
   --bg: #000000; /* Pure Black */
   --accent-bg: #4A0E05; /* Dark Reddish Brown */
-  --text: #D9C5C5; /* Soft Muted Pink */
-  --text-light: #A08A8A; /* Light Desaturated Pink */
+  --text: #ffffff; /* Soft Muted Pink */
+  --text-light: #ffffff; /* Light Desaturated Pink */
   --border: #8B0000; /* Dark Red (Blood Red) */
   --accent: #D30000; /* Bright Red */
   --accent-hover: #FF5C5C; /* Lighter Reddish-Pink */
@@ -46,6 +46,7 @@ body {
   background-color: var(--bg);
   grid-template-columns: 1fr min(45rem, 90%) 1fr;
   margin: 0;
+  padding: 0;
   font-size: 1.15rem;
   line-height: 1.5;
   display: grid;
@@ -62,12 +63,7 @@ body > header {
 body > header > :only-child {
   margin-block-start: 2rem;
 }
-body > header h1 {
-  margin: 1rem auto;
-}
-body > header p {
-  margin: 1rem auto;
-}
+
 main {
   padding-top: 1.5rem;
   background-color: white;
@@ -84,11 +80,9 @@ h1 {
   font-size: 3rem;
 }
 h2 {
-  margin-top: 3rem;
   font-size: 2.6rem;
 }
 h3 {
-  margin-top: 3rem;
   font-size: 2rem;
 }
 h4 {
@@ -101,7 +95,7 @@ h6 {
   font-size: 0.96rem;
 }
 p {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 p,
 h1,
@@ -111,6 +105,7 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  margin: 1rem 0;
 }
 h1,
 h2,
@@ -150,6 +145,7 @@ input[type="button"] {
   padding: 0.5rem 0.9rem;
   line-height: normal;
   text-decoration: none;
+  margin: 0.5rem 0;
 }
 .button[aria-disabled="true"],
 input:disabled,
@@ -208,7 +204,7 @@ header > nav a:visited {
   border: 1px solid var(--border);
   border-radius: var(--standard-border-radius);
   color: var(--text);
-  margin: 0 0.5rem 1rem;
+  margin: 0 0.25rem 0.5rem;
   padding: 0.1rem 1rem;
   text-decoration: none;
   display: inline-block;
@@ -236,7 +232,7 @@ progress {
   background-color: var(--accent-bg);
   border: 1px solid var(--border);
   border-radius: var(--standard-border-radius);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 aside {
   float: right;
@@ -260,7 +256,7 @@ fieldset,
 dialog {
   border: 1px solid var(--border);
   border-radius: var(--standard-border-radius);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   padding: 1rem;
 }
 article h2:first-child,
@@ -272,8 +268,8 @@ section h3:first-child {
 section {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  margin: 3rem 0;
-  padding: 2rem 1rem;
+  margin: 1.5rem 0;
+  padding: 1rem 0.5rem;
 }
 section + section,
 section:first-child {
@@ -308,7 +304,7 @@ details[open] > :last-child {
 }
 table {
   border-collapse: collapse;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 figure > table {
   width: max-content;
@@ -340,7 +336,7 @@ button,
   border-radius: var(--standard-border-radius);
   box-shadow: none;
   max-width: 100%;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   padding: 0.5rem;
   font-family: inherit;
   display: inline-block;
@@ -465,7 +461,7 @@ figcaption {
 blockquote {
   border-inline-start: 0.35rem solid var(--accent);
   color: var(--text-light);
-  margin-block: 2rem;
+  margin-block: 1rem;
   margin-inline: 2rem 0;
   padding: 0.4rem 0.8rem;
   font-style: italic;
@@ -558,8 +554,8 @@ sub {
   background: var(--accent-bg);
   border: 2px solid var(--border);
   border-radius: var(--standard-border-radius);
-  margin: 2rem 0;
-  padding: 1.5rem;
+  margin: 1rem 0;
+  padding: 1rem;
 }
 @media print {
   @page {
@@ -608,4 +604,10 @@ sub {
   pre code {
     white-space: pre-wrap;
   }
+}
+form div {
+  margin-bottom: 0.5rem;
+}
+div {
+  margin: 0.5rem 0;
 }
