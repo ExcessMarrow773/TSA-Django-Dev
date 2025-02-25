@@ -35,6 +35,6 @@ class CreatePost(forms.Form):
     )
     image = forms.ImageField(
         widget=forms.FileInput(
-            attrs={"class": "form-control"}
+            attrs={"class": "form-control", "type": "file"}
         )
     )
