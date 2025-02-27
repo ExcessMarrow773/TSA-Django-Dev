@@ -11,7 +11,7 @@
   --text: #ffffff; /* Soft Muted Pink */
   --text-light: #ffffff; /* Light Desaturated Pink */
   --border: #8B0000; /* Dark Red (Blood Red) */
-  --accent: #D30000; /* Bright Red */
+  --accent: #DE4040; /* Bright Red */
   --accent-hover: #FF5C5C; /* Lighter Reddish-Pink */
   --accent-text: var(--bg); /* Black for contrast */
   --code: #FF7878; /* Soft Neon Pink */
@@ -64,10 +64,7 @@ body > header > :only-child {
   margin-block-start: 2rem;
 }
 
-main {
-  padding-top: 1.5rem;
-  background-color: white;
-}
+
 body > footer {
   color: var(--text-light);
   text-align: center;
@@ -141,11 +138,11 @@ input[type="reset"],
 input[type="button"] {
   border: 1px solid var(--accent);
   background-color: var(--accent);
-  color: var(--accent-text);
-  padding: 0.5rem 0.9rem;
   line-height: normal;
+  color: var(--accent-text);
+  padding: 0.5rem 0.5rem;
   text-decoration: none;
-  margin: 0.5rem 0;
+  margin: 0.3rem 0;
 }
 .button[aria-disabled="true"],
 input:disabled,
@@ -184,6 +181,10 @@ header > nav {
   padding: 1rem 0 0;
   font-size: 1rem;
   line-height: 2;
+  position: sticky;
+  top: 0;
+  overflow: show;
+  background: #000000;
 }
 header > nav ul,
 header > nav ol {

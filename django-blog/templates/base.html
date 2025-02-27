@@ -3,27 +3,27 @@
     <title>My Personal Blog</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}"> 
     <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/9cbbd8e6-8714-4754-824f-0a79000aa06a/favicon.ico?v=1733976526774">
-</head>
-<body>
-    <div>
-        <h1>My Personal Blog</h1>
+    <h1>My Personal Blog</h1>
+    <div id="navbar">
         {% if user.is_authenticated %}
-            <p>
-                Welcome, {{ user.username.lower }}!
-                <a href="{% url 'logout' %}">Logout</a>
-                <a href="/admin">Admin Site</a>
-                <a href="{% url 'makepost' %}">Make a New Post</a>
-            </p>
+                <a id="name">{{ user.username }}</a>
+                <a class="button" href="{% url 'logout' %}">Logout</a>
+                {% if user.is_staff %}
+                <a class="button" href="/admin">Admin Site</a>
+                {% endif %}
+                <a class="button" href="{% url 'makepost' %}">Make a New Post</a>
         {% else %}
-            <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'register' %}">Register</a>
+            <a class="button" href="{% url 'login' %}">Login</a>
+            <a class="button" href="{% url 'register' %}">Register</a>
         {% endif %}
-        <a href="{% url 'blog_index' %}">Home</a>
-        <a href="{% url 'viewCategory' %}">Categories</a>
+        <a class="button" href="{% url 'blog_index' %}">Home</a>
+        <a class="button" href="{% url 'viewCategory' %}">Categories</a>
+      
     </div>
     <hr>
+</head>
     {% block page_title %}{% endblock page_title %}
     {% block page_content %}{% endblock page_content %}
     {% block footer %}{% endblock footer %}
-</body>

@@ -2,9 +2,10 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'style.css' %}">
 <title>Categories</title>
+{% block page_content %}
 <body>
+  <div>
     <h1>Categories</h1>
-    <h2>Existing Categories</h2>
     <ul>
         {% for category in categories %}
             <li><a href="{% url 'blog_category' category.name %}">{{ category.name }}</a></li>
@@ -12,4 +13,18 @@
             <li>No categories available.</li>
         {% endfor %}
     </ul>
+  </div>
+  {% block makeCategory %}
+  <div>
+    <form method="post" enctype="multipart/form-data">
+        <h5>Make a Category</h5>
+        {% csrf_token %}
+        <div>
+            {{ form.name }}
+        </div>
+        <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+  </div>
+  {% endblock %}
 </body>
+{% endblock %}

@@ -15,7 +15,17 @@ class CommentForm(forms.Form):
             attrs={"class": "form-control", "placeholder": "Leave a comment!"}
         )
     )
+    
+class CreateCategory(forms.Form):
+  name = forms.CharField(
+      max_length=30,
+      widget=forms.TextInput()
+  )
+    
 class CreatePost(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['image'].required = False
     title = forms.CharField(
         max_length=255,
         widget=forms.TextInput(
@@ -27,6 +37,7 @@ class CreatePost(forms.Form):
             attrs={"class": "form-control", "placeholder": "Body"}
         )
     )
+    
     categories = forms.ModelMultipleChoiceField(
         queryset=Category.objects.all(),
         widget=forms.CheckboxSelectMultiple(
@@ -35,6 +46,6 @@ class CreatePost(forms.Form):
     )
     image = forms.ImageField(
         widget=forms.FileInput(
-            attrs={"class": "form-control"}
+            attrs={"class": "form-control", "required": "False"}
         )
     )
