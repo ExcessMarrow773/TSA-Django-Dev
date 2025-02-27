@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from blog.models import Post, Comment, Category
-from blog.forms import CommentForm, CreatePost
+from blog.forms import CommentForm, CreatePost, CreateCategory
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView, LogoutView
 
@@ -82,10 +82,11 @@ def makepost(request):
 
 def viewCategory(request):
     categories = Category.objects.all()
+    form = CreateCategory()
     context = {
         'categories': categories,
     }
-    return render(request, "blog\catergory_view.html", context)
+    return render(request, "blog/catergory_view.html", context)
 
 class CustomLoginView(LoginView):
     template_name = 'login.html'
