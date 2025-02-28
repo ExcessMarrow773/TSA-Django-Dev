@@ -1,17 +1,20 @@
 <head>
     <meta charset="utf-8">
-    <title>My Personal Blog</title>
+    <title>Cooking for Neanderthals</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}"> 
     <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/9cbbd8e6-8714-4754-824f-0a79000aa06a/favicon.ico?v=1733976526774">
-    <h1>My Personal Blog</h1>
+    <h1>Cooking for Neanderthals</h1>
     <div id="navbar">
         {% if user.is_authenticated %}
                 <a id="name">{{ user.username }}</a>
                 <a class="button" href="{% url 'logout' %}">Logout</a>
                 {% if user.is_staff %}
                 <a class="button" href="/admin">Admin Site</a>
+                {% if user.is_superuser %}
+                <a class="button" href="https://glitch.com/edit/#!/busy-antique-product">Editor</a>
+                {% endif %}
                 {% endif %}
                 <a class="button" href="{% url 'makepost' %}">Make a New Post</a>
         {% else %}
