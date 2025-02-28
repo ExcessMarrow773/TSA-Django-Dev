@@ -11,8 +11,8 @@
   --text: #ffffff; /* Soft Muted Pink */
   --text-light: #ffffff; /* Light Desaturated Pink */
   --border: #8B0000; /* Dark Red (Blood Red) */
-  --accent: #DE4040; /* Bright Red */
-  --accent-hover: #FF5C5C; /* Lighter Reddish-Pink */
+  --accent: #FF7518; /* Bright Red */
+  --accent-hover: #bf5811; /* Lighter Reddish-Pink */
   --accent-text: var(--bg); /* Black for contrast */
   --code: #FF7878; /* Soft Neon Pink */
   --preformatted: #282828; /* Dark Gray */

@@ -28,7 +28,7 @@ else:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bald-plucky-bucket.glitch.me', 'preview.glitch.com', '127.0.0.1', 'localhost', '192.168.68.131']
+ALLOWED_HOSTS = ['preview.glitch.com', '127.0.0.1', 'localhost', 'busy-antique-product.glitch.me']
 
 
 # Application definition
