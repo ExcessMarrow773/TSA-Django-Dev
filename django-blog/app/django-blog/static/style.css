@@ -6,13 +6,13 @@
   --standard-border-radius: 5px;
 
   /* Updated Color Palette */
-  --bg: #000000; /* Pure Black */
+  --bg: #283747; /* Pure Black */
   --accent-bg: #4A0E05; /* Dark Reddish Brown */
-  --text: #D9C5C5; /* Soft Muted Pink */
-  --text-light: #A08A8A; /* Light Desaturated Pink */
-  --border: #8B0000; /* Dark Red (Blood Red) */
-  --accent: #D30000; /* Bright Red */
-  --accent-hover: #FF5C5C; /* Lighter Reddish-Pink */
+  --text: #ffffff; /* Soft Muted Pink */
+  --text-light: #ffffff; /* Light Desaturated Pink */
+  --border: #f1c40f; /* Dark Red (Blood Red) */
+  --accent: #27ae60; /* Bright Red */
+  --accent-hover: #1d8348; /* Lighter Reddish-Pink */
   --accent-text: var(--bg); /* Black for contrast */
   --code: #FF7878; /* Soft Neon Pink */
   --preformatted: #282828; /* Dark Gray */
@@ -46,6 +46,7 @@ body {
   background-color: var(--bg);
   grid-template-columns: 1fr min(45rem, 90%) 1fr;
   margin: 0;
+  padding: 0;
   font-size: 1.15rem;
   line-height: 1.5;
   display: grid;
@@ -63,10 +64,7 @@ body > header > :only-child {
   margin-block-start: 2rem;
 }
 
-main {
-  padding-top: 1.5rem;
-  background-color: white;
-}
+
 body > footer {
   color: var(--text-light);
   text-align: center;
@@ -94,7 +92,7 @@ h6 {
   font-size: 0.96rem;
 }
 p {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 p,
 h1,
@@ -104,6 +102,7 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  margin: 1rem 0;
 }
 h1,
 h2,
@@ -139,10 +138,11 @@ input[type="reset"],
 input[type="button"] {
   border: 1px solid var(--accent);
   background-color: var(--accent);
-  color: var(--accent-text);
-  padding: 0.5rem 0.9rem;
   line-height: normal;
+  color: var(--accent-text);
+  padding: 0.5rem 0.5rem;
   text-decoration: none;
+  margin: 0.3rem 0;
 }
 .button[aria-disabled="true"],
 input:disabled,
@@ -181,6 +181,10 @@ header > nav {
   padding: 1rem 0 0;
   font-size: 1rem;
   line-height: 2;
+  position: sticky;
+  top: 0;
+  overflow: show;
+  background: #000000;
 }
 header > nav ul,
 header > nav ol {
@@ -201,7 +205,7 @@ header > nav a:visited {
   border: 1px solid var(--border);
   border-radius: var(--standard-border-radius);
   color: var(--text);
-  margin: 0 0.5rem 1rem;
+  margin: 0 0.25rem 0.5rem;
   padding: 0.1rem 1rem;
   text-decoration: none;
   display: inline-block;
@@ -229,7 +233,7 @@ progress {
   background-color: var(--accent-bg);
   border: 1px solid var(--border);
   border-radius: var(--standard-border-radius);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 aside {
   float: right;
@@ -253,7 +257,7 @@ fieldset,
 dialog {
   border: 1px solid var(--border);
   border-radius: var(--standard-border-radius);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   padding: 1rem;
 }
 article h2:first-child,
@@ -265,8 +269,8 @@ section h3:first-child {
 section {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  margin: 3rem 0;
-  padding: 2rem 1rem;
+  margin: 1.5rem 0;
+  padding: 1rem 0.5rem;
 }
 section + section,
 section:first-child {
@@ -301,7 +305,7 @@ details[open] > :last-child {
 }
 table {
   border-collapse: collapse;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 figure > table {
   width: max-content;
@@ -333,7 +337,7 @@ button,
   border-radius: var(--standard-border-radius);
   box-shadow: none;
   max-width: 100%;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   padding: 0.5rem;
   font-family: inherit;
   display: inline-block;
@@ -458,7 +462,7 @@ figcaption {
 blockquote {
   border-inline-start: 0.35rem solid var(--accent);
   color: var(--text-light);
-  margin-block: 2rem;
+  margin-block: 1rem;
   margin-inline: 2rem 0;
   padding: 0.4rem 0.8rem;
   font-style: italic;
@@ -551,8 +555,8 @@ sub {
   background: var(--accent-bg);
   border: 2px solid var(--border);
   border-radius: var(--standard-border-radius);
-  margin: 2rem 0;
-  padding: 1.5rem;
+  margin: 1rem 0;
+  padding: 1rem;
 }
 @media print {
   @page {
@@ -601,4 +605,10 @@ sub {
   pre code {
     white-space: pre-wrap;
   }
+}
+form div {
+  margin-bottom: 0.5rem;
+}
+div {
+  margin: 0.5rem 0;
 }

@@ -18,11 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-if os.name == "win32":
-    with open("key.txt", "r") as key_file:
-        SECRET_KEY = key_file.read().strip()
-else:
-    SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 'p8p)+uafa88%5(069i*mi4c-nr(dh7@=&4yim3)iqf#dd18k9d'
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!

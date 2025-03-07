@@ -1,0 +1,21 @@
+#navbar {
+  position: sticky;
+  top: 0;
+  overflow: show;
+  background: #283747;
+}
+
+/* Navbar links */
+#navbar a {
+  float: center;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+#name {
+  color: #ffffff;
+}
+/* Page content */
+.content {
+  padding: 4px;
+}

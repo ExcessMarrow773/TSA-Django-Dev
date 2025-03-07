@@ -67,7 +67,7 @@ def makepost(request):
         form = CreatePost(request.POST, request.FILES)
         if form.is_valid():
             post = Post(
-                author.request.user.username,
+                author=request.user.username,
                 title=form.cleaned_data["title"],
                 body=form.cleaned_data["body"],
                 image=form.cleaned_data["image"]
