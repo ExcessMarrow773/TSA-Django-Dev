@@ -14,6 +14,9 @@
             </a>
         {% endfor %}
     </small>
+    <p>
+      By {{ post.author }}
+</p>
     <p>{{ post.body | linebreaks }}</p>
     <div>
         <img src="{{ post.image.url }}" alt="{{ post.title }}">

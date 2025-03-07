@@ -15,17 +15,20 @@ class CommentForm(forms.Form):
             attrs={"class": "form-control", "placeholder": "Leave a comment!"}
         )
     )
-    
+
 class CreateCategory(forms.Form):
-  name = forms.CharField(
-      max_length=30,
-      widget=forms.TextInput()
-  )
-    
+    name = forms.CharField(
+        max_length=60,
+        widget=forms.TextInput(
+            attrs={"class": "form-control", "placeholder": "Your Name"})
+        )
 class CreatePost(forms.Form):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['image'].required = False
+    author = forms.CharField(
+      max_length=255
+    )
     title = forms.CharField(
         max_length=255,
         widget=forms.TextInput(

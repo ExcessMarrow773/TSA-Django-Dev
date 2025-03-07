@@ -11,6 +11,9 @@
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div>
+          {{ form.author }}
+        </div>
+        <div>
             {{ form.title }}
         </div>
         <div>
