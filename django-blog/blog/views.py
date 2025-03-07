@@ -67,6 +67,7 @@ def makepost(request):
         form = CreatePost(request.POST, request.FILES)
         if form.is_valid():
             post = Post(
+                author.request.user.username,
                 title=form.cleaned_data["title"],
                 body=form.cleaned_data["body"],
                 image=form.cleaned_data["image"]
@@ -88,6 +89,16 @@ def viewCategory(request):
     }
     return render(request, "blog/catergory_view.html", context)
 
+def profile(request):
+    posts = Post.objects.all().order_by("-created_on")
+    username = request.user.username
+    context = {
+        "posts": posts, "username": username,
+    }
+    
+    return render(request, "blog/profile.html", context)
+  
+  
 class CustomLoginView(LoginView):
     template_name = 'login.html'
 

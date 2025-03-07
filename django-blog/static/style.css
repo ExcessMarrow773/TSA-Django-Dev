@@ -6,13 +6,13 @@
   --standard-border-radius: 5px;
 
   /* Updated Color Palette */
-  --bg: #000000; /* Pure Black */
+  --bg: #283747; /* Pure Black */
   --accent-bg: #4A0E05; /* Dark Reddish Brown */
   --text: #ffffff; /* Soft Muted Pink */
   --text-light: #ffffff; /* Light Desaturated Pink */
-  --border: #8B0000; /* Dark Red (Blood Red) */
-  --accent: #FF7518; /* Bright Red */
-  --accent-hover: #bf5811; /* Lighter Reddish-Pink */
+  --border: #f1c40f; /* Dark Red (Blood Red) */
+  --accent: #27ae60; /* Bright Red */
+  --accent-hover: #1d8348; /* Lighter Reddish-Pink */
   --accent-text: var(--bg); /* Black for contrast */
   --code: #FF7878; /* Soft Neon Pink */
   --preformatted: #282828; /* Dark Gray */
