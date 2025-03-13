@@ -1,26 +1,26 @@
-<!-- blog/templates/blog/profile.html -->
+<!-- blog/templates/blog/index.html -->
 {% extends "base.html" %}
 {% load static %}
 
+<title>Cooking for Neanderthals</title>
 {% block page_title %}
-    <h2>Blog Posts</h2>
-    <head>
-      <title>My Personal Blog</title>
-    </head>
+    <h2>Everything that the user {{ profile }} has posted</h2>
 {% endblock page_title %}
 
 {% block page_content %}
     {% block posts %}
         {% for post in posts %}
-            <h3><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h3>
-            <small>
-                {{ post.created_on.date }} | Categories:
-                {% for category in post.categories.all %}
-                    <a href="{% url 'blog_category' category.name %}">
-                        {{ category.name }}{% if not forloop.last %}, {% endif %}
-                    </a>
-                {% endfor %}
-            </small>
+            {% if post.author == profile %}
+                <h3>{{ post.author }} posted: <a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h3>
+                <small>
+                    {{ post.created_on.date }} | Categories:
+                    {% for category in post.categories.all %}
+                        <a href="{% url 'blog_category' category.name %}">
+                            {{ category.name }}{% if not forloop.last %}, {% endif %}
+                        </a>
+                    {% endfor %}
+                </small>
+            {% endif %}
         {% endfor %}
     {% endblock posts %}
 {% endblock page_content %}

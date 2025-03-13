@@ -37,8 +37,6 @@
     {% for comment in comments %}
         <p>
             On {{ comment.created_on.date }} <b>{{ comment.author }}</b> wrote:
-        </p>
-        <p>
             {{ comment.body | linebreaks }}
         </p>
     {% endfor %}

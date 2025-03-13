@@ -2,26 +2,27 @@
 <link rel="stylesheet" href="{% static 'style.css' %}">
 
 {% block page_title %}
-    <title>Create Post</title>
+    <title>Create Recipe</title>
 {% endblock page_title %}
 
 {% block page_content %}
 <body>
-    <h1>Create Post</h1>
+    <h1>Create Recipe</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <div>
-          {{ form.author }}
-        </div>
         <div>
             {{ form.title }}
         </div>
         <div>
             {{ form.body }}
         </div>
+        <nav>
         <div>
-            {{ form.categories }}
+            <ul class="dropdown-menu", style="height:30%; overflow:hidden; overflow-y:scroll;">
+                {{ form.categories }}
+              </ul>
         </div>
+        </nav>
         <div>
             {{ form.image }}
         </div>

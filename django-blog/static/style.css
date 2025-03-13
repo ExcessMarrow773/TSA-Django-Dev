@@ -20,6 +20,7 @@
   --disabled: #444444; /* Dark Gray */
 }
 
+
 img,
 video {
   opacity: 0.8;
@@ -138,7 +139,7 @@ input[type="reset"],
 input[type="button"] {
   border: 1px solid var(--accent);
   background-color: var(--accent);
-  line-height: normal;
+  line-height: large;
   color: var(--accent-text);
   padding: 0.5rem 0.5rem;
   text-decoration: none;

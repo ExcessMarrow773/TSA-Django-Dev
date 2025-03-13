@@ -44,7 +44,7 @@ def blog_detail(request, pk):
         "form": CommentForm(),
 
     }
-
+    
     return render(request, "blog/detail.html", context)
   
 def register(request):
@@ -56,11 +56,6 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, 'register.html', {'form': form})
-  
-def test(request):
-    context = {
-    }
-    return render(request, "blog/index.html", context)
 
 def makepost(request):
     if request.method == "POST":
@@ -86,14 +81,16 @@ def viewCategory(request):
     form = CreateCategory()
     context = {
         'categories': categories,
+        'form': form,
     }
     return render(request, "blog/catergory_view.html", context)
 
-def profile(request):
+def profile(request, user):
     posts = Post.objects.all().order_by("-created_on")
     username = request.user.username
     context = {
-        "posts": posts, "username": username,
+        "posts": posts,
+        "profile": username,
     }
     
     return render(request, "blog/profile.html", context)
@@ -103,4 +100,4 @@ class CustomLoginView(LoginView):
     template_name = 'login.html'
 
 class CustomLogoutView(LogoutView):
-    template_name = 'logged_out.html'
+    template_name = 'index.html'
