@@ -15,11 +15,11 @@
         {% endfor %}
     </small>
     <p>
-      By {{ post.author }}
+      By <a href="{% url 'profile' post.author %}">{{ post.author }}</a>
 </p>
     <p>{{ post.body | linebreaks }}</p>
     <div>
-        <img src="{{ post.image.url }}" alt="{{ post.title }}">
+        <img src="{{ post.image.url }}" alt="{{ post.image.name }}">
     </div>
         <h3>Leave a comment:</h3>
     <form method="post">

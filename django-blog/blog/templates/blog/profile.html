@@ -13,7 +13,7 @@
             {% if post.author == profile %}
                 <h3>{{ post.author }} posted: <a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h3>
                 <small>
-                    {{ post.created_on.date }} | Categories:
+                    {{ post.created_on.date }} | Tags:
                     {% for category in post.categories.all %}
                         <a href="{% url 'blog_category' category.name %}">
                             {{ category.name }}{% if not forloop.last %}, {% endif %}

@@ -87,7 +87,7 @@ def viewCategory(request):
 
 def profile(request, user):
     posts = Post.objects.all().order_by("-created_on")
-    username = request.user.username
+    username = user
     context = {
         "posts": posts,
         "profile": username,

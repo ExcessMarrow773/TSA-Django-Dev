@@ -15,6 +15,6 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('makepost/', views.makepost, name='makepost'),
     path('viewCategory/', views.viewCategory, name='viewCategory'),
-    path('profile/<int:user>', views.profile, name='profile'),
+    path('profile/<user>', views.profile, name='profile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
