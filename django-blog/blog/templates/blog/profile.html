@@ -2,7 +2,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-<title>Cooking for Neanderthals</title>
 {% block page_title %}
     <h2>Everything that the user {{ profile }} has posted</h2>
 {% endblock page_title %}
@@ -11,7 +10,7 @@
     {% block posts %}
         {% for post in posts %}
             {% if post.author == profile %}
-                <h3>{{ post.author }} posted: <a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h3>
+                <h3>{{ post.author }} posted: <a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a> {% if profile == user.username %}<a style='float: right;' class='button' href="{% url 'deletePost' post.pk %}">delete</a>{% endif %}</h3>
                 <small>
                     {{ post.created_on.date }} | Tags:
                     {% for category in post.categories.all %}

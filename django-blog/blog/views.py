@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from blog.models import Post, Comment, Category
-from blog.forms import CommentForm, CreatePost, CreateCategory
+from blog.forms import *
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView, LogoutView
 
@@ -31,7 +31,7 @@ def blog_detail(request, pk):
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = Comment(
-                author=form.cleaned_data["author"],
+                author=request.user.username,
                 body=form.cleaned_data["body"],
                 post=post,
             )
@@ -78,12 +78,22 @@ def makepost(request):
 
 def viewCategory(request):
     categories = Category.objects.all()
-    form = CreateCategory()
-    context = {
-        'categories': categories,
-        'form': form,
-    }
+    if request.method == "POST":
+        form = CreateCategory(request.POST)
+        if form.is_valid():
+            category = Category(
+                name=form.cleaned_data["name"]
+            )
+            category.save()
+            return HttpResponseRedirect(request.path_info)
+    else:
+        form = CreateCategory()
+        context = {
+            'categories': categories,
+            'form': form,
+        }
     return render(request, "blog/catergory_view.html", context)
+    
 
 def profile(request, user):
     posts = Post.objects.all().order_by("-created_on")
@@ -94,7 +104,19 @@ def profile(request, user):
     }
     
     return render(request, "blog/profile.html", context)
-  
+
+def deletePost(request, pk):
+    form = DeletePost()
+    post = Post.objects.get(pk=pk)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+    context = {
+        "post": post,
+        "form": form
+    }
+    if form.is_valid():
+        post.delete()
+    return render(request, "blog/deletePost.html", context)
   
 class CustomLoginView(LoginView):
     template_name = 'login.html'

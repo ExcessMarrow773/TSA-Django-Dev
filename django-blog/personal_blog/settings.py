@@ -22,7 +22,7 @@ SECRET_KEY = 'p8p)+uafa88%5(069i*mi4c-nr(dh7@=&4yim3)iqf#dd18k9d'
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['preview.glitch.com', '127.0.0.1', 'localhost', 'busy-antique-product.glitch.me']
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -120,7 +121,7 @@ USE_L10N = True
 USE_TZ = True
 
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = ''
+LOGOUT_REDIRECT_URL = '/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
@@ -154,5 +155,10 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "spector.studio.games@gmail.com"
 EMAIL_HOST_PASSWORD = "dhtp tzep ajmm eecd"
-
-
+SERVER_EMAIL = "spector.studio.games@gmail.com"
+ADMINS = [
+        ('admin', 'spector.studio.games@gmail.com'),
+        ('Aaron', 'aaron.gami.art@gmail.com'),
+        ('GlitchyBlackCat', 'dbridges@code-crew.org'),
+        ('atticus', 'excessmarrow773@gmail.com')
+    ]

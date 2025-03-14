@@ -125,6 +125,7 @@ h3 {
     font-size: 1.25rem;
   }
 }
+
 a,
 a:visited {
   color: var(--accent);
@@ -143,6 +144,7 @@ input[type="button"] {
   line-height: large;
   color: var(--accent-text);
   padding: 0.5rem 0.5rem;
+  text-align: center;
   text-decoration: none;
   margin: 0.3rem 0;
 }

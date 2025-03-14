@@ -7,7 +7,7 @@
 
 {% block page_content %}
     <small>
-        {{ post.created_on.date }} | Categories:
+        {{ post.created_on.date }} at {{ post.created_on.time}} | Categories:
         {% for category in post.categories.all %}
             <a href="{% url 'blog_category' category.name %}">
                 {{ category.name }}
@@ -24,9 +24,6 @@
         <h3>Leave a comment:</h3>
     <form method="post">
         {% csrf_token %}
-        <div>
-            {{ form.author }}
-        </div>
         <div>
             {{ form.body }}
         </div>
