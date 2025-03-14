@@ -1,0 +1,13 @@
+<head>
+    <meta charset="utf-8">
+    <title>Cooking for Neanderthals</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}"> 
+    <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/9cbbd8e6-8714-4754-824f-0a79000aa06a/favicon.ico?v=1733976526774">
+
+<head>
+{% block page_content %}
+   <h1>Whoops. Looks like you found a error!</h1>
+   <h2>You probably entered a bad link<a href={% url 'blog_index'%} class='button'> go back to the home page</a></h1>
+{% endblock page_content%}

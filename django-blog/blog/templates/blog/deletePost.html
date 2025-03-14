@@ -1,0 +1,16 @@
+<!-- blog/templates/blog/index.html -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<title>Deletion confermantion of {{ post.title }}</title>
+{% block page_content %}
+    <h1>Are you sure you want to delete the post {{ post.title }}?<br>
+        <form method="post">
+            {% csrf_token %}
+            <h4>{{form.AreYouSure}}Are You sure?</h4><br>
+
+
+            <a type="submit" style="float: left;" class="button">Yes</a>
+            <a style="float: right;" class="button" href="{% url 'profile' post.author %}">No</a>
+        </form>
+    </h1>
+{% endblock page_content %}

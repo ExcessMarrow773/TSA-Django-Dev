@@ -7,7 +7,7 @@
 
 {% block page_content %}
     <small>
-        {{ post.created_on.date }} | Categories:
+        {{ post.created_on.date }} at {{ post.created_on.time}} | Categories:
         {% for category in post.categories.all %}
             <a href="{% url 'blog_category' category.name %}">
                 {{ category.name }}
@@ -15,18 +15,15 @@
         {% endfor %}
     </small>
     <p>
-      By {{ post.author }}
+      By <a href="{% url 'profile' post.author %}">{{ post.author }}</a>
 </p>
     <p>{{ post.body | linebreaks }}</p>
     <div>
-        <img src="{{ post.image.url }}" alt="{{ post.title }}">
+        <img src="{{ post.image.url }}" alt="{{ post.image.name }}">
     </div>
         <h3>Leave a comment:</h3>
     <form method="post">
         {% csrf_token %}
-        <div>
-            {{ form.author }}
-        </div>
         <div>
             {{ form.body }}
         </div>
@@ -37,8 +34,6 @@
     {% for comment in comments %}
         <p>
             On {{ comment.created_on.date }} <b>{{ comment.author }}</b> wrote:
-        </p>
-        <p>
             {{ comment.body | linebreaks }}
         </p>
     {% endfor %}

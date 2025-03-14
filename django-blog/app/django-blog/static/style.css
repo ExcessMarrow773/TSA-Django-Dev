@@ -20,6 +20,7 @@
   --disabled: #444444; /* Dark Gray */
 }
 
+
 img,
 video {
   opacity: 0.8;
@@ -81,6 +82,7 @@ h2 {
 }
 h3 {
   font-size: 2rem;
+  text-decoration: none;
 }
 h4 {
   font-size: 1.44rem;
@@ -123,6 +125,7 @@ h3 {
     font-size: 1.25rem;
   }
 }
+
 a,
 a:visited {
   color: var(--accent);
@@ -138,9 +141,10 @@ input[type="reset"],
 input[type="button"] {
   border: 1px solid var(--accent);
   background-color: var(--accent);
-  line-height: normal;
+  line-height: large;
   color: var(--accent-text);
   padding: 0.5rem 0.5rem;
+  text-align: center;
   text-decoration: none;
   margin: 0.3rem 0;
 }
