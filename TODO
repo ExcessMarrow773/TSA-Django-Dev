@@ -1,15 +1,25 @@
 Checklist
 
-● Fix Make a Categories Form
-● Add Error Emailing www.geeksforgeeks.org/setup-sending-email-in-django-project/
-  ● Add custom error pages
-● account page with post menu
-  ● post delete menu
-● add a way to see the profile of the user who created a post
-● post formatting in the "Make a Post" area
-● Add posted_on timestamps for autoposting
+https://www.github.com/ExcessMarrow773/TSA-Django-Dev
 
+● Fix Make a Categories Form ✔️
+● Add Error Emailing www.geeksforgeeks.org/setup-sending-email-in-django-project/ ✔️
+  ● Add custom error pages ✔️
+● account page with post menu ✔️
+  ● post delete menu 〰️✔️
+● add a way to see the profile of the user who created a post ✔️
+● post formatting in the "Make a Post" area
+● Add posted_on timestamps for autoposting ✔️
+● Add tags system ✔️
+● Add recipe type-thing ✔️
+● Add Comment Username auto-entry ✔️
+● Fix the Logout page ✔️
+● Fix images with debug off
 
 ● Deployment Checklist
-● CSS formatting and coloring (it looks like the hub)
-● Croudsoursing and adding recipes 
+● CSS formatting and coloring ✔️
+● Crowdsourcing and adding recipes 
+
+
+✔️ = done
+〰️✔️ = partially completed
